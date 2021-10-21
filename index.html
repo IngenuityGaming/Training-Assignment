@@ -18,7 +18,10 @@
     
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="overflow: hidden; top: 0;
+    z-index: 100;
+    position: fixed;
+    width: 100%;">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">AJain</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,10 +30,10 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-link" href="#">Home</a>
-              <a class="nav-link" href="#about">About Us</a>
+              <a class="nav-link" href="#about">About</a>
               <a class="nav-link" href="#skills">Technologies</a>
-              <a class="nav-link" href="#">Projects</a>
-              <a class="nav-link" href="#5">Contact Me</a>
+              <a class="nav-link" href="#rows">Projects</a>
+              <a class="nav-link" href="#contact">Contact</a>
             </div>
           </div>
         </div>
@@ -108,7 +111,7 @@
   
           <div class="section-title">
             <h2 style="text-transform: uppercase; text-align: center;">Technologies & Languages</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            <p style="text-align: center;margin-top: 10px; color: blueviolet; font-weight: 700;">Knowledge of HTML, CSS, JavaScript, React.Js etc and learning many more</p>
           </div>
   
           <!--  -->
@@ -185,7 +188,7 @@
         <div class="content2">
             <div class="container2">
                 <h2 style="margin-bottom: 50px;">PROJECTS</h2>
-                <div class="row">
+                <div class="row" id="rows">
                     <!-- project1 -->
                     <div class="col-md-4 col-12">
                         <div class="single-project">
@@ -227,17 +230,17 @@
               <h3 class="text-center text-uppercase">contact us</h3>
               <p class="text-center w-75 m-auto">Feel Free to Contact!!</p>
               <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+                        <a href="tel:9058967684"><div class="card border-0">
+                           <div class="card-body text-center">
+                             <i class="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
+                              <h4 class="text-uppercase mb-5">call us</h4>
+                             <p id="lat" style="color: black;" >+91-9058967684</p>
+                           </div></a>
+                         </div>
+                      </div>
                 <div class="col-sm-12 col-md-6 col-lg-3 my-5">
-                  <div class="card border-0">
-                     <div class="card-body text-center">
-                       <i class="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
-                       <h4 class="text-uppercase mb-5">call us</h4>
-                       <p id="lat">+91-9058967684</p>
-                     </div>
-                   </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-3 my-5">
-                  <div class="card border-0">
+                  <div style="color: black;" class="card border-0">
                      <div class="card-body text-center">
                        <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
                        <h4 class="text-uppercase mb-5">office location</h4>
@@ -246,7 +249,7 @@
                    </div>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-3 my-5">
-                  <div class="card border-0">
+                  <div style="color: black;" class="card border-0">
                      <div class="card-body text-center">
                        <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
                        <h4 class="text-uppercase mb-5">Home location</h4>
@@ -255,12 +258,13 @@
                    </div>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-3 my-5">
-                  <div class="card border-0">
+                 <a href="mailto:jainananya78@gmail.com"> <div class="card border-0">
                      <div class="card-body text-center">
                        <i class="fa fa-globe fa-5x mb-3" aria-hidden="true"></i>
                        <h4 class="text-uppercase mb-5">email</h4>
-                       <p>jainananya78@gmail.com</p>
+                       <p id="lat" style="color: black;">jainananya78@gmail.com</p>
                      </div>
+                    </a>
                    </div>
                 </div>
               </div>

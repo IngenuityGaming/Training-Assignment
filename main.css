@@ -3,6 +3,10 @@
     margin: 0;
     padding: 0;
   }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 200px;
+}
   .navbar-brand {
     font-size: xx-large;
     font-family: cursive;
@@ -149,7 +153,7 @@
   }
   
   .projects .content2 {
-    z-index: 999;
+    /* z-index: 999; */
     position: relative;
     color: #fff;
   }
@@ -217,3 +221,9 @@
       color: blanchedalmond;
       padding: 30px;
   }
+  a{
+      color: black;
+      text-decoration: none;
+     
+  }
+  
