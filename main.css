@@ -125,7 +125,7 @@
   
   /* projects */
   .projects {
-    background-image: url(images.jpg);
+    background-image: url('images.jpg');
   
     width: 100%;
   
