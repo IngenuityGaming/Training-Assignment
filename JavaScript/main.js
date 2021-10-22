@@ -1,56 +1,69 @@
+// getting all required elements
+const inputBox = document.querySelector(".input-container input");
+const addBtn = document.querySelector(".input-container button");
+const todoList = document.querySelector(".todoList");
+const deleteAllBtn = document.querySelector(".footer button");
 
-var todoInput = document.querySelector(".todo-input");
-var todobtn = document.querySelector(".todo-btn");
-var todoList = document.querySelector(".todo-list");
+// onkeyup event
+inputBox.onkeyup = ()=>{
+  let userEnteredValue = inputBox.value; 
+  if(userEnteredValue.trim() != 0){ 
+    addBtn.classList.add("active"); 
+  }else{
+    addBtn.classList.remove("active"); 
+  }
+}
 
-todobtn.onclick = create;
+showTasks(); 
 
- 
-function create(e){ 
-    e.preventDefault();
+addBtn.onclick = ()=>{ 
+  let userEnteredValue = inputBox.value; 
+  let getLocalStorageData = localStorage.getItem("New Todo"); //getting localstorage
+  if(getLocalStorageData == null){ //if localstorage has no data
+    listArray = []; //blank array
+  }else{
+    listArray = JSON.parse(getLocalStorageData);  
+  }
+  listArray.push(userEnteredValue); //adding new value in array
+  localStorage.setItem("New Todo", JSON.stringify(listArray)); 
+  showTasks(); //calling showTask function
+  addBtn.classList.remove("active");
+}
 
-    if(todoInput.value){
-    var newDiv = document.createElement("div");
-    newDiv.classList.add("todo");
+function showTasks(){
+  let getLocalStorageData = localStorage.getItem("New Todo");
+  if(getLocalStorageData == null){
+    listArray = [];
+  }else{
+    listArray = JSON.parse(getLocalStorageData); 
+  }
+  const pendingTasksNumb = document.querySelector(".pendingTasks");
+  pendingTasksNumb.textContent = listArray.length; 
+  if(listArray.length > 0){ 
+    deleteAllBtn.classList.add("active"); 
+  }else{
+    deleteAllBtn.classList.remove("active"); 
+  }
+  let newLiTag = "";
+  listArray.forEach((element, index) => {
+    newLiTag += `<li>${element}<span class="icon" onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span></li>`;
+  });
+  todoList.innerHTML = newLiTag; 
+  inputBox.value = ""; 
+}
 
-    var newli = document.createElement("li");
-    newli.classList.add("todo-li");
-    newli.innerHTML=todoInput.value;
+// delete task function
+function deleteTask(index){
+  let getLocalStorageData = localStorage.getItem("New Todo");
+  listArray = JSON.parse(getLocalStorageData);
+  listArray.splice(index, 1); //delete  list
+  localStorage.setItem("New Todo", JSON.stringify(listArray));
+  showTasks(); 
+}
 
-    newDiv.appendChild(newli);
-
-     var chkbtn=document.createElement("button");
-     chkbtn.classList.add("chk-btn");
-     chkbtn.innerHTML='<i class="fa fa-check"></i>';
-     newDiv.appendChild(chkbtn);
-     
-     var delbtn = document.createElement("button");
-     delbtn.classList.add("del-btn");
-     delbtn.innerHTML='<i class= "fa fa-trash"></i>';
-     newDiv.appendChild(delbtn);
-     todoInput.value="";
-
-     todoList.appendChild(newDiv);
-
-     todoList.onclick = chkdel;
-
-     function chkdel(e)
-     {
-         var item = e.target; 
-         if(item.classList[0] === "del-btn")
-         {
-             var parent = item.parentNode;
-             parent.remove();
-         }
-         if(item.classList[0]=== "chk-btn"){
-             var parent =item.parentNode;
-             parent.classList.toggle("done");
-         }
-     }
-
-    }
-    else{
-        alert("Field can't be empty. Enter value");
-    }
-    
+// delete all tasks function
+deleteAllBtn.onclick = ()=>{
+  listArray = []; 
+  localStorage.setItem("New Todo", JSON.stringify(listArray)); 
+  showTasks(); 
 }
