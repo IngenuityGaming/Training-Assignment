@@ -1,0 +1,239 @@
+* {
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 200px;
+}
+  .navbar-brand {
+    font-size: xx-large;
+    font-family: cursive;
+    background-color: rgb(179, 179, 0);
+    border-radius: 30px;
+    padding: 10px;
+  }
+  
+  .navbar-nav {
+    font-size: large;
+    font-weight: 800;
+  }
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  .imagee .pic {
+    height: auto;
+    width: auto;
+    border-radius: 50%;
+    margin-right: 200px;
+  }
+  button{
+    margin-top: 40px;
+    border-radius: 10px;
+    padding: 8px;
+  }
+  button:hover{
+    cursor: pointer;
+    background-color:rgb(255, 255, 119);
+    transform: rotate(10deg);
+  }
+  #about {
+    background: rgba(202, 202, 202, 0.267);
+  }
+  
+  #ab {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .sec-3 {
+    padding: 20px;
+    margin-right: 0;
+  }
+  .sec-3 ul li {
+    list-style: none;
+    /* display: inline-block; */
+    margin-bottom: 5px;
+    height: 60px;
+    width: 60px;
+    background-color: gray;
+    border-radius: 50%;
+  }
+  
+  .sec-3 ul li i {
+    list-style: none;
+    margin: 20px;
+    font-size: 25px;
+    line-height: 20px;
+    text-align: center;
+    color: white;
+  }
+  .sec-3 ul li:hover {
+    background-color: rgb(131, 131, 0);
+  }
+  
+  #skills {
+    margin: 40px;
+    background: white;
+    margin: 0;
+    padding: 0;
+  }
+  .section-title {
+    padding: 10px;
+  }
+  /*  */
+  .maindiv {
+    justify-content: space-around;
+    /* display: flex; */
+    display: block;
+    width: 100%;
+    float: left;
+    padding: 10px;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+    background: white;
+    /* background-position: center;
+    background-size: cover; */
+  
+    /* padding: 0%;
+    margin: 0%; */
+  }
+  
+  .box {
+    /* display:inline-flexbox; */
+    /* background-color: rgba(160, 0, 0, 0.829); */
+    background-image: linear-gradient(purple, white);
+    box-shadow: 4px 4px 4px 4px grey;
+    float: left;
+    display: block;
+    width: 300px;
+    border-radius: 10px;
+    margin: 30px;
+    border: 2px solid black;
+    height: 300px;
+  }
+  .box:hover {
+    background-image: linear-gradient(rgba(73, 0, 73, 0.562),white);
+    cursor: pointer;
+  }
+  
+  .title h2 {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-weight: normal;
+  }
+  
+  .description-cards {
+    padding: 20px;
+    color: black;
+    text-align: justify;
+    /* font-weight: 500; */
+    line-height: 20px;
+    margin: 2px;
+    font-weight: bold;
+  }
+  
+  /* projects */
+  .projects {
+    background-image: url('images.jpg');
+  
+    width: 100%;
+  
+    background-size: cover;
+    background-position: center;
+    /* background-attachment: fixed; */
+  
+    /* chnge */
+    position: relative;
+    padding-bottom: 40px;
+  }
+  
+  .projects::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* // background-color: rgba(0, 0, 0, 0.3); */
+    width: 100%;
+    height: 100%;
+  }
+  
+  .projects .content2 {
+    /* z-index: 999; */
+    position: relative;
+    color: #fff;
+  }
+  
+  .projects .content2 h2 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .projects .content2 .single-project {
+    background-color: rgba(150, 150, 150, 0.829);
+    border-radius: 5px;
+    padding: 10px;
+    transition: 0.4s all ease-in-out;
+    height: 100%;
+  }
+  
+  .projects .content2 .single-project:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .projects .content2 .single-project * {
+    text-align: center;
+  }
+  
+  .projects .content2 .single-project i {
+    font-size: 3rem;
+    color: rgb(75, 201, 64);
+    text-align: center;
+    display: block;
+    margin-bottom: 20px;
+    transition: 0.3s;
+  }
+  
+  .projects .content2 .single-project i {
+    color: var(--primary-color);
+  }
+  
+  .projects .content2 .single-project h4 {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .projects .content2 .single-project p {
+    font-size: 1rem;
+    color: #f1f1f1;
+    text-align: justify;
+  }
+  
+  #contact .card:hover i,
+  #contact .card:hover h4 {
+    color: rgb(168, 168, 53);
+    transform: scale(1.2);
+  }
+  #contact{
+      margin-top: 30px;
+  }
+  .footer{
+      text-align: center;
+      background-color: black;
+      color: blanchedalmond;
+      padding: 30px;
+  }
+  a{
+      color: black;
+      text-decoration: none;
+     
+  }
+  
