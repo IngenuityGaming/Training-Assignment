@@ -105,9 +105,10 @@
     border: 2px solid black;
     height: 300px;
   }
-  /* .box:hover {
-    background-image: linear-gradient(black, white);
-  } */
+  .box:hover {
+    background-image: linear-gradient(rgba(73, 0, 73, 0.562),white);
+    cursor: pointer;
+  }
   
   .title h2 {
     margin-top: 20px;
