@@ -7,16 +7,17 @@
     <title>Play Hangman</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.css">
 
 </head>
 <body>
 
     <div class="main-div">
-        <h1 class="text-center">Hangman</h1>
-        <div class="float-right">Wrong Guesses: <span id='mistakes'>0</span> of <span id='maxWrong'></span></div>
+        <h1 class="heading">Hang-the-man !</h1>
+        <div class="wg">Wrong Guesses: <span id='mistakes'>0</span> of <span id='maxWrong'></span></div>
         <div class="text-center">
           <img id='photo' src="../images/0.jpg" alt="">
-          <p>Guess the Car names:</p>
+          <p id="q">Guess the Car names:</p>
           <p id="word">The word to be guessed goes here</p>
           <div id="keyboard"></div>
           <button class="btn btn-info" onClick="reset()">Reset</button>

@@ -1,18 +1,5 @@
 var guessing_word = [
-	"bmw",
-    "ferrari",
-    "jagur",
-    "toyotafortuner",
-    "landRover",
-    "swift",
-    "Jeep",
-    "lamborgini",
-    "hyundai",
-    "tataMotors",
-    "verna",
-    "ford",
-    "swiftDesire",
-    "mercedes"
+	"bmw", "ferrari", "jagur","toyotafortuner","landRover","swift","Jeep","lamborgini","hyundai","tataMotors","verna","ford","swiftDesire","mercedes"
 ]
 
 let answer = '';
@@ -62,6 +49,7 @@ function updateHangmanPicture() {
 function checkIfGameWon() {
   if (wordStatus === answer) {
     document.getElementById('keyboard').innerHTML = 'You Won!!!';
+    
   }
 }
 
