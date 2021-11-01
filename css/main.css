@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    text-align: center;
+   background-color: rgb(39, 39, 39);
+}
+
+#keyboard{
+    background-color: rgb(247, 150, 82);
+    margin-bottom: 5px;
+}
+.heading{
+    color: whitesmoke;
+    font-family:cursive;
+}
+.wg{
+    color: white;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+#q,#word{
+    color: white;
+}
