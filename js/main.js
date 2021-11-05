@@ -348,4 +348,158 @@ Array.prototype.last = function () {
   }
   
   
+  function drawHero() {
+    ctx.save();
+    ctx.fillStyle = "black";
+    ctx.translate(
+      heroX - heroWidth / 2,
+      heroY + canvasHeight - platformHeight - heroHeight / 2
+    );
   
+    // Body
+    drawRoundedRect(
+      -heroWidth / 2,
+      -heroHeight / 2,
+      heroWidth,
+      heroHeight - 4,
+      5
+    );
+  
+    // Legs
+    const legDistance = 5;
+    ctx.beginPath();
+    ctx.arc(legDistance, 11.5, 3, 0, Math.PI * 2, false);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(-legDistance, 11.5, 3, 0, Math.PI * 2, false);
+    ctx.fill();
+  
+    // Eye
+    ctx.beginPath();
+    ctx.fillStyle = "white";
+    ctx.arc(5, -7, 3, 0, Math.PI * 2, false);
+    ctx.fill();
+  
+    // Band
+    ctx.fillStyle = "red";
+    ctx.fillRect(-heroWidth / 2 - 1, -12, heroWidth + 2, 4.5);
+    ctx.beginPath();
+    ctx.moveTo(-9, -14.5);
+    ctx.lineTo(-17, -18.5);
+    ctx.lineTo(-14, -8.5);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(-10, -10.5);
+    ctx.lineTo(-15, -3.5);
+    ctx.lineTo(-5, -7);
+    ctx.fill();
+  
+    ctx.restore();
+  }
+  
+  function drawRoundedRect(x, y, width, height, radius) {
+    ctx.beginPath();
+    ctx.moveTo(x, y + radius);
+    ctx.lineTo(x, y + height - radius);
+    ctx.arcTo(x, y + height, x + radius, y + height, radius);
+    ctx.lineTo(x + width - radius, y + height);
+    ctx.arcTo(x + width, y + height, x + width, y + height - radius, radius);
+    ctx.lineTo(x + width, y + radius);
+    ctx.arcTo(x + width, y, x + width - radius, y, radius);
+    ctx.lineTo(x + radius, y);
+    ctx.arcTo(x, y, x, y + radius, radius);
+    ctx.fill();
+  }
+  
+  function drawSticks() {
+    sticks.forEach((stick) => {
+      ctx.save();
+  
+     
+      ctx.translate(stick.x, canvasHeight - platformHeight);
+      ctx.rotate((Math.PI / 180) * stick.rotation);
+  
+      ctx.beginPath();
+      ctx.lineWidth = 2;
+      ctx.moveTo(0, 0);
+      ctx.lineTo(0, -stick.length);
+      ctx.stroke();
+  
+      // Restore transformations
+      ctx.restore();
+    });
+  }
+  
+  function drawBackground() {
+    // Draw sky
+    var gradient = ctx.createLinearGradient(0, 0, 0, window.innerHeight);
+    gradient.addColorStop(0, "#BBD691");
+    gradient.addColorStop(1, "#FEF1E1");
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+  
+    // Draw hills
+    drawHill(hill1BaseHeight, hill1Amplitude, hill1Stretch, "#95C629");
+    drawHill(hill2BaseHeight, hill2Amplitude, hill2Stretch, "#659F1C");
+  
+    // Draw trees
+    trees.forEach((tree) => drawTree(tree.x, tree.color));
+  }
+  
+  function drawHill(baseHeight, amplitude, stretch, color) {
+    ctx.beginPath();
+    ctx.moveTo(0, window.innerHeight);
+    ctx.lineTo(0, getHillY(0, baseHeight, amplitude, stretch));
+    for (let i = 0; i < window.innerWidth; i++) {
+      ctx.lineTo(i, getHillY(i, baseHeight, amplitude, stretch));
+    }
+    ctx.lineTo(window.innerWidth, window.innerHeight);
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
+  
+  function drawTree(x, color) {
+    ctx.save();
+    ctx.translate(
+      (-sceneOffset * backgroundSpeedMultiplier + x) * hill1Stretch,
+      getTreeY(x, hill1BaseHeight, hill1Amplitude)
+    );
+  
+    const treeTrunkHeight = 5;
+    const treeTrunkWidth = 2;
+    const treeCrownHeight = 25;
+    const treeCrownWidth = 10;
+  
+    // Draw trunk
+    ctx.fillStyle = "#7D833C";
+    ctx.fillRect(
+      -treeTrunkWidth / 2,
+      -treeTrunkHeight,
+      treeTrunkWidth,
+      treeTrunkHeight
+    );
+  
+    // Draw crown
+    ctx.beginPath();
+    ctx.moveTo(-treeCrownWidth / 2, -treeTrunkHeight);
+    ctx.lineTo(0, -(treeTrunkHeight + treeCrownHeight));
+    ctx.lineTo(treeCrownWidth / 2, -treeTrunkHeight);
+    ctx.fillStyle = color;
+    ctx.fill();
+  
+    ctx.restore();
+  }
+  
+  function getHillY(windowX, baseHeight, amplitude, stretch) {
+    const sineBaseY = window.innerHeight - baseHeight;
+    return (
+      Math.sinus((sceneOffset * backgroundSpeedMultiplier + windowX) * stretch) *
+        amplitude +
+      sineBaseY
+    );
+  }
+  
+  function getTreeY(x, baseHeight, amplitude) {
+    const sineBaseY = window.innerHeight - baseHeight;
+    return Math.sinus(x) * amplitude + sineBaseY;
+  }
