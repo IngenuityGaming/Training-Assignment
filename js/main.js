@@ -134,18 +134,6 @@
       let endPoint;
       let canvasSnapShot;
       let drawCommand = drawLine2;
-      // window.addEventListener("keyup", function (e) {
-      //     console.log(e.key, e.code);
-      //   if (e.code === "KeyL") {
-      //     drawCommand = drawLine2;
-      //   } else if (e.code === "KeyR") {
-      //     drawCommand = drawRect;
-      //   } else if (e.code === "KeyC") {
-      //     drawCommand = drawCircle;
-      //   }
-      // });
-
-
       let isSquare=false;
       const square=document.getElementById('sqaure');
       const circle=document.getElementById('circle');
