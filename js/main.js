@@ -45,6 +45,7 @@
   function drawAJ(flag) {
     
     if (brushSelecdted) {
+     
       let isDrawing = false;
       let x = 0;
       let y = 0;
@@ -77,10 +78,17 @@
   
       function drawLine(context, x1, y1, x2, y2) {
         context.beginPath();
-        context.strokeStyle = color;
+     
         context.lineWidth = sizeA;
         context.moveTo(x1, y1);
         context.lineTo(x2, y2);
+
+        // if(flag==false){
+        //   context.strokeStyle="white";
+        // }else{
+        //   context.strokeStyle = color;
+        // }
+        context.strokeStyle = color;
         context.stroke();
       }
     }
@@ -92,23 +100,21 @@
     clear.addEventListener('click',function(){
       brushSelecdted=false;
       brush.style.color = "white";
-      context.fillStyle='white';
+      // context.fillStyle='white';
       // context.getElementById('sizeAJ').value="white";
-  
-     
-      context.fillRect(0,0,window.innerWidth-80,window.innerHeight-60);
-    //  drawAJ();
+      // context.fillRect(0,0,window.innerWidth-80,window.innerHeight-60);
+      context.clearRect(0,0,window.innerWidth-80,window.innerWidth-80);
+    
     })
   
   
     //earser
+    let flag=false;
     const earserAJ= document.getElementById('earser');
     earserAJ.addEventListener('click',function(){
-      brushSelecdted=false;
-  
       brush.style.color = "white";
-  
-      earserAJ.style.color="#1E90FF";
+      earserAJ.style.color="#1E90FF"; 
+      drawAJ(flag);
       
     })
     
