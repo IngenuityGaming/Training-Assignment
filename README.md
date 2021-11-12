@@ -1,3 +1,3 @@
 # Training-Assignment
 
-# Paint - using canvas 
+# Paint - using canvas, HTML5, CSS, JavaScript
