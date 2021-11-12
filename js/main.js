@@ -13,10 +13,12 @@
   
   //brush
   let brushSelecdted = false;
+  let isLine=false;
   const brush = document.getElementById("pen");
   
   brush.addEventListener('click', function () {
     brushSelecdted = true;
+    isLine=false;
     drawAJ();
     brush.style.color = "#1E90FF";
    
@@ -92,6 +94,7 @@
         // }
         context.strokeStyle = color;
         context.stroke();
+        context.closePath();
       }
     }
   }
@@ -166,7 +169,7 @@
       drawCommand=drawCircle;
     })
 
-    let isLine=false;
+  
     line.addEventListener('click',function(){
       isLine=true;
       line.style.color="#1E90FF";
