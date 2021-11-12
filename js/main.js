@@ -103,6 +103,7 @@
       // context.fillStyle='white';
       // context.getElementById('sizeAJ').value="white";
       // context.fillRect(0,0,window.innerWidth-80,window.innerHeight-60);
+      
       context.clearRect(0,0,window.innerWidth-80,window.innerWidth-80);
     
     })
