@@ -146,6 +146,7 @@
       let isSquare=false;
       const square=document.getElementById('sqaure');
       const circle=document.getElementById('circle');
+      const line=document.getElementById('line');
 
   square.addEventListener('click',function (){
     isSquare=true;
@@ -163,6 +164,13 @@
       isCircle=true;
       circle.style.color="#1E90FF";
       drawCommand=drawCircle;
+    })
+
+    let isLine=false;
+    line.addEventListener('click',function(){
+      isLine=true;
+      line.style.color="#1E90FF";
+      drawCommand=drawLine2;
     })
       canvas.addEventListener("mousedown", function (e) {
         isMouseDown = true;
@@ -186,7 +194,7 @@
       });
 
       function drawLine2() {
-        if(isCircle==true || isSquare==true){
+        if(isCircle==true || isSquare==true || isLine==true){
           context.putImageData(canvasSnapShot, 0, 0);
           context.strokeStyle = color;
           context.lineWidth = sizeA.value;
