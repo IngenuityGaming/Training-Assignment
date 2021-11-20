@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-app</title>
+    <style>
+        body{
+           padding: 0;
+           margin: 0;
+           background-color: rgb(102, 152, 182);
+
+        }
+       
+        h1,nav {
+            text-align: center;
+            text-decoration: underline;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        select,button {
+            margin-bottom: 10px;
+        }                                                                                                                                           
+        button{
+            border-radius: 30px;
+            padding: 10px;
+            font-weight: 900;
+            
+        }
+        button:hover{
+            cursor: pointer;
+        }
+        #showData{
+            
+            padding: 10px;
+
+        }
+        th
+            { 
+                border-collapse: collapse; 
+                border: 2px solid black;
+                font-size: medium;
+                padding: 10px;
+            }
+        tr,td
+            { 
+                border: solid thin; 
+                text-align: center;
+                 background-color:rgb(250, 175, 200);
+                font-weight: 900;
+            }
+
+
+    </style>
+</head>
+<body>
+
+    <h1>Search details related to covid-19</h1>
+    <nav>
+        <label for="options">CHOOSE CONTINENT:</label><br>
+        <select name="options" id="optionsSelect">
+            <option value="All">All</option>
+            <option value="Africa">Africa</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="North America">North America</option>
+            <option value="South America">South America</option>
+        </select><br>
+        <button id="btn">Show Data</button>
+        <table id="table" ></table>    
+    </nav>
+
+    <main id="main">
+        <div id="showData"></div>
+    </main>
+    <script src="./src/index.js"></script>
+</body>
+</html>
