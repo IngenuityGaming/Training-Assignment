@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game</title>
+    <script src="https://pixijs.download/release/pixi.js"></script>
+</head>
+<body>
+    <canvas id="app" width="800" height="600"></canvas>
+    <script>
+        const app=new PIXI.Application({
+            view:document.getElementById('app'),
+            width: 1280,
+            height: 720,
+            antialias: false,
+            resolution: 1,
+        });
+
+        app.loader
+            .add('aliens','https://pixijs.io/examples/examples/assets/spritesheet/monsters.png')
+            .add("monter", 'https://pixijs.io/examples/examples/assets/maggot_tiny.png')
+            .load(setup);
+
+        function setup(loadero,resources){
+            const m=new PIXI.Sprite(resources.aliens.texture);
+            // m.anchor.set(0.5);
+            m.x=app.screen.width/2;
+            m.y=app.screen.height/2;
+            app.stage.addChild(m);
+        }
+    </script>
+</body>
+</html>
