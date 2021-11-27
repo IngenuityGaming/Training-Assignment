@@ -9,7 +9,7 @@ import {
   Card, cardFrames, CARD_WIDTH, CARD_HEIGHT,
 } from './Card';
 import { shuffleArray } from './utils';
-//mport { title } from 'process';
+
 let flag=0;
 export class Game {
     private stage: Container;
