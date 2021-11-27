@@ -1,5 +1,5 @@
 {
-  "name": "Assignment 9(Memory Card Game)",
+  "name": "memorygame",
   "version": "1.0.0",
   "dependencies": {
   "gsap": "^3.7.1",

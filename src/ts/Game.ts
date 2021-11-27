@@ -194,8 +194,7 @@ private endText(): void {
 
     public update(delta:number):void {
       if (this.isInitialized) {
-        // console.warn(delta);
-        // eslint-disable-next-line no-unused-expressions
+       
         delta;
       }
     }
