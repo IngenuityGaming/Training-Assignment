@@ -14,6 +14,10 @@ export default {
       key: 'front',
       url: 'img/shapes.jpg',
     },
+    {
+      key:'desyrel',
+      url:'fonts/desyrel.xml'
+    }
   
   ],
 };
