@@ -1,7 +1,0 @@
-.vscode
-.idea
-.DS_STORE
-build
-node_modules
-.module-cache
-*.log*
